@@ -427,7 +427,7 @@ class Html {
      * @return  void
      */
     static function sp($text = "", ...$params) {
-        echo(htmlspecialchars(sprintf($text, ...$params)));
+        self::t(sprintf($text, ...$params));
     }
     // }}}
     // {{{ e()

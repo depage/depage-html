@@ -4,7 +4,7 @@ namespace Depage\Html;
 
 class Cleaner
 {
-    public $dontCleanTags = array();
+    public $dontCleanTags = [];
 
     // {{{ constructor
     /*
@@ -13,10 +13,10 @@ class Cleaner
      */
     public function __construct()
     {
-        $this->dontCleanTags = implode("|<", array(
+        $this->dontCleanTags = implode("|<", [
             "pre",
             "textarea",
-        ));
+        ]);
     }
     // }}}
 
@@ -48,7 +48,7 @@ class Cleaner
                 // trim line
                 $line = trim($line);
                 // replace multiple spaces with only one space
-                $line = preg_replace("/\"[^\"]*\"(*SKIP)(*FAIL)|'[^']*'(*SKIP)(*FAIL)|( )+/", " ", $line);
+                $line = preg_replace("/\"[^\"]*\"(*SKIP)(*FAIL)|'[^']*'(*SKIP)(*FAIL)|(\s|&#13;)+/", " ", $line);
                 // throw away empty lines
                 if ($line != "") {
                     $html .= $line . "\n";
