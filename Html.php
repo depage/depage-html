@@ -515,20 +515,6 @@ class Html {
     }
     // }}}
 
-    // {{{ markdown()
-    /**
-     * outputs html by parsing markdown syntax
-     *
-     * @param   $param (string) text to parse
-     * @return  void
-     */
-    static function markdown($param, $nofollow = '', $gamut_filter = array()) {
-        require_once('custom_markdown.php');
-
-        echo(Markdown(htmlspecialchars($param), $nofollow, $gamut_filter));
-    }
-    // }}}
-
     // {{{ truncate()
     static function truncate($string, $max = 50, $rep = "") {
         if (strlen($string) <= $max) {
